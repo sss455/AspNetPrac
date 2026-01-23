@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="page001.aspx" title="階層001"  description="階層001です。">
+    <siteMapNode url="page011.aspx" title="階層011"  description="階層011です。">
+      <siteMapNode url="page101.aspx" title="階層101"  description="階層101です。" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

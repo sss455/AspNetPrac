@@ -1,0 +1,582 @@
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True
+
+
+ OnSelectedIndexChanged="grid_SelectedIndexChanged"
+
+
+grid_RowUpdating
+ OnRowUpdating="grid_RowUpdating"
+
+grid_RowUpdated
+ OnRowUpdated="grid_RowUpdated"
+
+
+grid_RowCreated
+ OnGridRowCreated="grid_RowCreated"
+
+
+186
+
+
+
+
+data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SelfAsp.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Source=(LocalDB)\MSSQLLocalDB;
+AttachDbFilename=|DataDirectory|\SelfAsp.mdf;
+Integrated Security=True
+
+
+
+
+System.IO.FileLoadException
+  HResult=0x80131040
+  Message=ファイルまたはアセンブリ 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'、またはその依存関係の 1 つが読み込めませんでした。見つかったアセンブリのマニフェスト定義はアセンブリ参照に一致しません。 (HRESULT からの例外:0x80131040)
+  Source=System.Memory
+  スタック トレース:
+   場所 System.MemoryExtensions.AsSpan(String text)
+   場所 Microsoft.Data.SqlClient.LocalDb.LocalDbApi.GetLocalDbInstanceNameFromServerName(String serverName)
+   場所 Microsoft.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   場所 Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   場所 Microsoft.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   場所 Microsoft.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   場所 Microsoft.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   場所 SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.InitConnection() (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs):行 933
+   場所 SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.get_Connection() (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs):行 747
+   場所 SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.InitAdapter() (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs):行 832
+   場所 SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.get_Adapter() (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs):行 736
+   場所 SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.Fill(AlbumDataTable dataTable) (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs):行 952
+   場所 SelfAspNet.Chap05.TableAdapter.Page_Load(Object sender, EventArgs e) (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\TableAdapter.aspx.cs):行 17
+
+
+
+
+connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True" />
+connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True"
+connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True"
+
+
+
+
+
+
+
+
+
+
+'/' アプリケーションでサーバー エラーが発生しました。
+ファイルまたはアセンブリ 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'、またはその依存関係の 1 つが読み込めませんでした。見つかったアセンブリのマニフェスト定義はアセンブリ参照に一致しません。 (HRESULT からの例外:0x80131040)
+説明: 現在の Web 要求を実行中に、ハンドルされていない例外が発生しました。エラーに関する詳細および例外の発生場所については、スタック トレースを参照してください。
+
+例外の詳細: System.IO.FileLoadException: ファイルまたはアセンブリ 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'、またはその依存関係の 1 つが読み込めませんでした。見つかったアセンブリのマニフェスト定義はアセンブリ参照に一致しません。 (HRESULT からの例外:0x80131040)
+
+ソース エラー:
+
+
+行 931:        private void InitConnection() {
+行 932:            this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
+行 933:            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SelfAsp"].ConnectionString;
+行 934:        }
+行 935:        
+
+ソース ファイル: C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs    行: 933
+
+アセンブリ読み込みトレース: 以下の情報は、アセンブリ 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' を読み込めなかった原因を調べるのに役立ちます。
+
+
+=== 事前バインド状態情報 ===
+ログ: DisplayName = System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+ (Fully-specified)
+ログ: Appbase = file:///C:/Users/010159_numoto/CsharpPrac/source/repos/SelfAspNet/
+ログ: Initial PrivatePath = C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\bin
+呼び出しているアセンブリ: System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+===
+ログ: このバインドは default の読み込みコンテキストで開始します。
+ログ: アプリケーション構成ファイル C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\web.config を使用します。
+ログ: ホスト構成ファイル C:\Users\010159_numoto\Documents\IISExpress\config\aspnet.config を使用します。
+ログ: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config からのコンピューター構成ファイルを使用します。
+ログ: ポリシー後の参照: System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+ログ: 新しい URL file:///C:/Users/010159_numoto/AppData/Local/Temp/Temporary ASP.NET Files/vs/64dad761/e9b6fbde/System.Runtime.CompilerServices.Unsafe.DLL をダウンロードしようとしています。
+ログ: 新しい URL file:///C:/Users/010159_numoto/AppData/Local/Temp/Temporary ASP.NET Files/vs/64dad761/e9b6fbde/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.DLL をダウンロードしようとしています。
+ログ: 新しい URL file:///C:/Users/010159_numoto/CsharpPrac/source/repos/SelfAspNet/bin/System.Runtime.CompilerServices.Unsafe.DLL をダウンロードしようとしています。
+警告: アセンブリ名の比較の結果、Major Version の不一致が見つかりました。
+エラー: アセンブリのセットアップを完了できませんでした (hr = 0x80131040)。調査は中止しました。
+
+スタック トレース:
+
+
+[FileLoadException: ファイルまたはアセンブリ 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'、またはその依存関係の 1 つが読み込めませんでした。見つかったアセンブリのマニフェスト定義はアセンブリ参照に一致しません。 (HRESULT からの例外:0x80131040)]
+   System.MemoryExtensions.AsSpan(String text) +0
+   Microsoft.Data.SqlClient.LocalDb.LocalDbApi.GetLocalDbInstanceNameFromServerName(String serverName) +68
+   Microsoft.Data.SqlClient.SqlConnectionString..ctor(String connectionString) +1932
+   Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous) +38
+   Microsoft.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions) +217
+   Microsoft.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key) +53
+   Microsoft.Data.SqlClient.SqlConnection.set_ConnectionString(String value) +383
+   SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.InitConnection() in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs:933
+   SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.get_Connection() in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs:747
+   SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.InitAdapter() in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs:832
+   SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.get_Adapter() in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs:736
+   SelfAspNet.Chap05.AlbumDataSetTableAdapters.AlbumTableAdapter.Fill(AlbumDataTable dataTable) in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\AlbumDataSet.Designer.cs:952
+   SelfAspNet.Chap05.TableAdapter.Page_Load(Object sender, EventArgs e) in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\TableAdapter.aspx.cs:17
+   System.Web.UI.Control.OnLoad(EventArgs e) +99
+   System.Web.UI.Control.LoadRecursive() +154
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +4077
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System.Data.Entity.Validation.DbEntityValidationException: 'Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.'
+
+
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+説明: 現在の Web 要求を実行中に、ハンドルされていない例外が発生しました。エラーに関する詳細および例外の発生場所については、スタック トレースを参照してください。
+
+例外の詳細: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+
+ソース エラー:
+
+
+行 52:             db.Entry(b).State = EntityState.Modified;
+行 53:             // 変更されたモデルをデータベースに保存
+行 54:             db.SaveChanges();
+行 55:         }
+行 56:     }
+
+ソース ファイル: C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\CrudMethod.aspx.cs    行: 54
+
+スタック トレース:
+
+
+[DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.]
+   System.Data.Entity.Internal.InternalContext.SaveChanges() +200
+   SelfAspNet.Chap05.CrudMethod.UpdateBook(Book b) in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap05\CrudMethod.aspx.cs:54
+
+[TargetInvocationException: 呼び出しのターゲットが例外をスローしました。]
+   System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor) +0
+   System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments) +216
+   System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture) +182
+   lambda_method(Closure , MethodInfo , Object , Object[] ) +48
+   System.Web.UI.WebControls.ModelDataSourceView.InvokeMethod(ModelDataSourceMethod method, Boolean isAsyncMethod) +406
+   System.Web.UI.WebControls.ModelDataSourceView.GetUpdateMethodResult(IDictionary keys, IDictionary values, IDictionary oldValues) +88
+   System.Web.UI.WebControls.ModelDataSourceView.ExecuteUpdate(IDictionary keys, IDictionary values, IDictionary oldValues) +23
+   System.Web.UI.DataSourceView.Update(IDictionary keys, IDictionary values, IDictionary oldValues, DataSourceViewOperationCallback callback) +175
+   System.Web.UI.WebControls.GridView.HandleUpdate(GridViewRow row, Int32 rowIndex, Boolean causesValidation) +1641
+   System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup) +1051
+   System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args) +50
+   System.Web.UI.WebControls.GridViewRow.OnBubbleEvent(Object source, EventArgs e) +147
+   System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args) +50
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +5440
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iText.Kernel.Exceptions.PdfException: 'Unknown PdfException.'
+
+
+NotSupportedException: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+
+
+iText.Kernel.Exceptions.PdfException
+  HResult=0x80131500
+  Message=Unknown PdfException.
+  Source=itext.kernel
+  スタック トレース:
+   場所 iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+   場所 iText.Kernel.Pdf.PdfWriter..ctor(Stream os, WriterProperties properties)
+   場所 SelfAspNet.Chap06.OutputStream.Page_Load(Object sender, EventArgs e) (C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap06\OutputStream.aspx.cs):行 21
+
+  この例外は、最初にこの呼び出し履歴 
+    [外部コード] でスローされました
+
+内部例外 1:
+NotSupportedException: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+
+
+
+
+'/' アプリケーションでサーバー エラーが発生しました。
+Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+説明: 現在の Web 要求を実行中に、ハンドルされていない例外が発生しました。エラーに関する詳細および例外の発生場所については、スタック トレースを参照してください。
+
+例外の詳細: System.NotSupportedException: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+
+ソース エラー:
+
+
+行 19:         {
+行 20:             // 新規のPDF文書を生成
+行 21:             var doc = new Document(
+行 22:                 new PdfDocument(
+行 23:                     new PdfWriter(Response.OutputStream)
+
+ソース ファイル: C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap06\OutputStream.aspx.cs    行: 21
+
+スタック トレース:
+
+
+[NotSupportedException: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator]
+   iText.Bouncycastleconnector.BouncyCastleDefaultFactory.CreateIDigest(String hashAlgorithm) +62
+   iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor() +133
+
+[PdfException: Unknown PdfException.]
+   iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor() +214
+   iText.Kernel.Pdf.PdfWriter..ctor(Stream os, WriterProperties properties) +81
+   SelfAspNet.Chap06.OutputStream.Page_Load(Object sender, EventArgs e) in C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\Chap06\OutputStream.aspx.cs:21
+   System.Web.UI.Control.OnLoad(EventArgs e) +99
+   System.Web.UI.Control.LoadRecursive() +154
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +4077
+
+バージョン情報: Microsoft .NET Framework バージョン:4.0.30319; ASP.NET バージョン:4.8.9319.0
+
+
+
+        var font = PdfFontFactory.CreateTtcFont("c:/windows/fonts/msgothis.ttc", 1, PdfEncodings.IDENTITY_H, true, true);
+
+        doc.SetFont(font);
+
+        // 文字列を追加
+        doc.Add(
+            new Paragraph("こんにちは")
+                .Add(new Text("世界！！").SetFontSize(20))
+        );
+
+        // 文書の終了 & 出力の終了
+        doc.Close();
+        Response.End();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<runtime>
+  <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+    <dependentAssembly>
+      <assemblyIdentity name="System.Text.Json" publicKeyToken="CC7B13FFCD2DDD51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.5" newVersion="8.0.0.5" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="B03F5F7F11D50A3A" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Memory.Data" publicKeyToken="CC7B13FFCD2DDD51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.1" newVersion="8.0.0.1" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="CC7B13FFCD2DDD51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.1" newVersion="8.0.0.1" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Buffers" publicKeyToken="CC7B13FFCD2DDD51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-4.0.3.0" newVersion="4.0.3.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" publicKeyToken="31BF3856AD364E35" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-7.7.1.0" newVersion="7.7.1.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Extensions.Logging.Abstractions" publicKeyToken="ADB9793829DDAE60" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.3" newVersion="8.0.0.3" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Extensions.DependencyInjection.Abstractions" publicKeyToken="ADB9793829DDAE60" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.2" newVersion="8.0.0.2" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Azure.Core" publicKeyToken="92742159E12E44C8" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-1.47.1.0" newVersion="1.47.1.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Azure.Core" publicKeyToken="92742159e12e44c8" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-1.47.1.0" newVersion="1.47.1.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.1" newVersion="8.0.0.1" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Text.Json" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.5" newVersion="8.0.0.5" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-7.7.1.0" newVersion="7.7.1.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Memory.Data" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.1" newVersion="8.0.0.1" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Buffers" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-4.0.3.0" newVersion="4.0.3.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Extensions.Logging.Abstractions" publicKeyToken="adb9793829ddae60" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.3" newVersion="8.0.0.3" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Extensions.DependencyInjection.Abstractions" publicKeyToken="adb9793829ddae60" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.2" newVersion="8.0.0.2" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="System.Security.AccessControl" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-6.0.0.1" newVersion="6.0.0.1" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Bcl.AsyncInterfaces" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.0" newVersion="8.0.0.0" />
+    </dependentAssembly>
+    <dependentAssembly>
+      <assemblyIdentity name="Microsoft.Extensions.Options" publicKeyToken="adb9793829ddae60" culture="neutral" />
+      <bindingRedirect oldVersion="0.0.0.0-8.0.0.2" newVersion="8.0.0.2" />
+    </dependentAssembly>
+  </assemblyBinding>
+</runtime>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+■テーブルキャッシュ
+aspnet_regsql -S "(LocalDB)\MSSQLLocalDB" -E -d "c:\Data\SelfAspNet\SelfAspNet\App_Data\SelfAsp.mdf" -ed -et -t Album
+aspnet_regsql -S "(LocalDB)\MSSQLLocalDB" -E -d "C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\App_Data\SelfAsp.mdf" -ed -et -t Album
+
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\010159_numoto\CsharpPrac\source\repos\SelfAspNet\App_Data\SelfAsp.mdf;Integrated Security=True
+
+2025/11/12 14:15:40
+
+
+■マイグレーションを利用するには、パッケージマネージャーコンソールから以下のコマンドを実行
+PM＞ Enable-Migrations -ContextTypeName SelfAspNetIdentity.Models.ApplicationDbContext
+→ マイグレーション機能を有効化
+
+PM＞ Add-Migration UrlToUsers
+→ マイグレーションスクリプトを生成
+
+PM＞ Update-Database
+→ データベースに反映
+
+
+■ロールのマイグレーション
+PM＞ Add-Migration AddNewRole
+→ マイグレーションスクリプトを生成
+
+PM＞ Update-Database
+→ データベースに反映
+
+
+
+
+
+
+jquery
+asp.net core mvc
+C#
+postgreSQL
+jenkins
+git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iText.Kernel.Exceptions.PdfException: 'Unknown PdfException.'
+
+NotSupportedException: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+
+
+
+
+
+
+
+
+
+
+
+1	Rdb.aspx	データベース連携	データベース, 連携	データベース連携について	0
+2	~/Chap09/db.aspx	データベース	データベース	データベースについて	1
+3	~/Chap09/Type.aspx	データ型	データ型	データ型について	2
+4	~/Chap09/Limit.aspx	制約	制約, 条件	制約について	2
+5	~/Chap09/Sql.aspx	SQL	SQL, 命令	SQLについて	2
+6	DataSource.aspx	データソースコントロール	データソースコントロール	データソースコントロールについて	1
+7	~/Chap10/Content.aspx	SqlDataSource	リレーショナルデータベース	SqlDataSourceについて	6
+8	SiteMapDataSource.aspx	SiteMapDataSource	サイトマップファイル	SiteMapDataSourceについて	6
+9	ObjectDataSource.aspx	ObjectDataSource	ビジネスオブジェクト	ObjectDataSourceについて	6
+10	DataAccess.aspx	データバインドコントロール	データバインドコントロール	データバインドコントロールについて	1
+11	~/Chap08/Auth/GridView.aspx	GridView	一覧表	GridViewについて	10
+12	~/Chap08/Auth/DetailsView.aspx	DetailsView	詳細	DetailsViewについて	10
+13	~/Chap08/Auth/FormView.aspx	FormView	単票	FormViewについて	10
+14	~/Chap09/Dml.aspx	DML	データ操作	データ操作言語について	5
+15	~/Chap09/Ddl.aspx	DDL	データ定義	データ定義言語について	5
+16	~/Chap09/Dcl.aspx	DCL	データ制御	データ制御言語について	5
+NULL	NULL	NULL	NULL	NULL	NULL
+
+
+
+
+
+
+
+
+
+
+書籍打ち合わせ（翔泳社） 12:00~
+Webアプリ開発フォーラム講演 15:00~	
+
+
+
+
+
+
+
+
+
+
+
+
+282
+
+
+
+  <entityFramework>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"/>
+      </providers>
+  </entityFramework>
+
+
+
+
+
+
+
+  <connectionStrings>
+    <add name="SelfAsp" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True"
+      providerName="System.Data.SqlClient"/>
+    <add name="SelfAspEntities"
+      connectionString="data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SelfAsp.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+      providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+
+
+
+
+
+    <add name="SelfAsp" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True" providerName="System.Data.SqlClient"/>
+	<add name="SelfAsp" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True" providerName="System.Data.SqlClient"/>
+
+
+
+
+
+データベースへの接続中にエラーが発生しました。
+データベースは使用できない可能性があります。
+型'System.Data.Entity.Core.EntityException'の例外が発生しました。
+エラーメッセージ：'基になるプロバイダーがOpenで失敗しました。
+発生した内部例外の型：'System.Data.SqlClient.SqlException'。
+エラーメッセージ：'An attempt to attach an auto-named database for file C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\SelfAsp.mdf failed.
+A database with the same name exists, or specified file cannot be opened, or it is located on UNC share.'。'。
+
+
+https://localhost:44366/api/books/978-4-7981-5112-0
+
+978-4-7981-5112-0
+978-4-7981-5112-0
+
+
+https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo/
+
+
+
+
+
+
+
+
+
+成功発行プロファイル 'C:\Users\010159_numoto\AspNetPrac\source\repos\SelfAspNet\Properties\PublishProfiles\IISProfile.pubxml' が作成されました。
+
+
+
+
+
+
+
+
+

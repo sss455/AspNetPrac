@@ -1,0 +1,1087 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2BA0D22-FAC1-4D5E-83CD-169C82213B96}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SelfAspNet</RootNamespace>
+    <AssemblyName>SelfAspNet</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.8\lib\net40\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Books.xml" />
+    <Content Include="App_Data\SelfAsp.mdf" />
+    <Content Include="App_Data\SelfAsp_log.ldf">
+      <DependentUpon>SelfAsp.mdf</DependentUpon>
+    </Content>
+    <Content Include="Chap02\Hello2.aspx" />
+    <Content Include="Chap02\ViewState.aspx" />
+    <Content Include="Chap02\ViewState2.aspx" />
+    <Content Include="Chap03\Button.aspx" />
+    <Content Include="Chap03\CheckBox.aspx" />
+    <Content Include="Chap03\Custom.aspx" />
+    <Content Include="Chap03\Escape.aspx" />
+    <Content Include="Chap03\FileUpload.aspx" />
+    <Content Include="Chap03\FileUpload2.aspx" />
+    <Content Include="Chap03\FileUploadMulti.aspx" />
+    <Content Include="Chap03\HyperLink.aspx" />
+    <Content Include="Chap03\ImageTag.aspx" />
+    <Content Include="Chap03\ListBox.aspx" />
+    <Content Include="Chap03\RadioButton.aspx" />
+    <Content Include="Chap03\Required.aspx" />
+    <Content Include="Chap03\Text.aspx" />
+    <Content Include="Chap03\Valid.aspx" />
+    <Content Include="Chap03\ValidBook.aspx" />
+    <Content Include="Chap03\ValidGroup.aspx" />
+    <Content Include="Chap03\ValidSummary.aspx" />
+    <Content Include="Chap04\DetailsView.aspx" />
+    <Content Include="Chap04\FormView.aspx" />
+    <Content Include="Chap04\FormViewAlbum.aspx" />
+    <Content Include="Chap04\FormViewCustom.aspx" />
+    <Content Include="Chap04\GridView.aspx" />
+    <Content Include="Chap04\GridViewBook.aspx" />
+    <Content Include="Chap04\GridViewCustom.aspx" />
+    <Content Include="Chap04\GridViewSort.aspx" />
+    <Content Include="Chap04\GridViewTemplate.aspx" />
+    <Content Include="Chap04\ListView.aspx" />
+    <Content Include="Chap04\ListViewGroup.aspx" />
+    <Content Include="Chap05\CrudMethod.aspx" />
+    <Content Include="Chap05\ExecuteNonQuery.aspx" />
+    <Content Include="Chap05\ExecuteReader.aspx" />
+    <Content Include="Chap05\ExecuteScalar.aspx" />
+    <Content Include="Chap05\Nest.aspx" />
+    <Content Include="Chap05\NonAccess.aspx" />
+    <Content Include="Chap05\ObjectParam.aspx" />
+    <Content Include="Chap05\ObjectParam2.aspx" />
+    <Content Include="Chap05\Paging.aspx" />
+    <Content Include="Chap05\PhotoUpload.aspx" />
+    <Content Include="Chap05\SqlOpti.aspx" />
+    <Content Include="Chap05\SqlParam.aspx" />
+    <Content Include="Chap05\SqlStored.aspx" />
+    <Content Include="Chap05\SqlStored2.aspx" />
+    <Content Include="Chap05\TableAdapter.aspx" />
+    <Content Include="Chap05\Transaction.aspx" />
+    <Content Include="Chap06\AppendHeader.aspx" />
+    <Content Include="Chap06\ContentType.aspx" />
+    <Content Include="Chap06\HelloForm.aspx" />
+    <Content Include="Chap06\HelloTrace.aspx" />
+    <Content Include="Chap06\OutputStream.aspx" />
+    <Content Include="Chap06\QueryString.aspx" />
+    <Content Include="Chap06\ReqUrl.aspx" />
+    <Content Include="Chap06\StatusCode.aspx" />
+    <Content Include="Chap06\WriteFile.aspx" />
+    <Content Include="Chap07\App1.aspx" />
+    <Content Include="Chap07\App2.aspx" />
+    <Content Include="Chap07\Cookie.aspx" />
+    <Content Include="Chap07\DataCache.aspx" />
+    <Content Include="Chap07\DataCache2.aspx" />
+    <Content Include="Chap07\HeaderCache.aspx" />
+    <Content Include="Chap07\Session1.aspx" />
+    <Content Include="Chap07\Session2.aspx" />
+    <Content Include="Chap07\ViewStateGame.aspx" />
+    <Content Include="Chap09\Calendar.aspx" />
+    <Content Include="Chap09\CalendarBirth.aspx" />
+    <Content Include="Chap09\CalendarSche.aspx" />
+    <Content Include="Chap09\CalendarSche2.aspx" />
+    <Content Include="Chap09\Chart.aspx" />
+    <Content Include="Chap09\Chart2.aspx" />
+    <Content Include="Chap09\Db.aspx" />
+    <Content Include="Chap09\Limit.aspx" />
+    <Content Include="Chap09\Menu.aspx" />
+    <Content Include="Chap09\MultiView.aspx" />
+    <Content Include="Chap09\MultiViewBook.aspx" />
+    <Content Include="Chap09\Sql.aspx" />
+    <Content Include="Chap09\TreeView.aspx" />
+    <Content Include="Chap09\Wizard.aspx" />
+    <Content Include="Chap09\WizardTemplate.aspx" />
+    <Content Include="Chap10\AccessTest.txt" />
+    <Content Include="Chap10\AppSettings.aspx" />
+    <Content Include="Chap10\Blog.aspx" />
+    <Content Include="Chap10\ChartParts.ascx" />
+    <Content Include="Chap10\Content.aspx" />
+    <Content Include="Chap10\Content2.aspx" />
+    <Content Include="Chap10\Diary.aspx" />
+    <Content Include="Chap10\Error.html" />
+    <Content Include="Chap10\GridFriendly.aspx" />
+    <Content Include="Chap10\RouteUrl.aspx" />
+    <Content Include="Chap10\Schedule.ascx" />
+    <Content Include="Chap10\UserChart.aspx" />
+    <Content Include="Chap10\UserSchedule.aspx" />
+    <Content Include="Chap10\ValidPage.aspx" />
+    <Content Include="Chap11\Basic.aspx" />
+    <Content Include="Chap11\Chain.aspx" />
+    <Content Include="Chap11\Chain2.aspx" />
+    <Content Include="Chap11\Event.aspx" />
+    <Content Include="Chap11\Timer.aspx" />
+    <Content Include="Chap11\Timer2.aspx" />
+    <Content Include="Chap11\UpdatePanel.aspx" />
+    <Content Include="Chap11\UpdateProgress.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Chap02\Hello.aspx" />
+    <Content Include="Image\A0001.jpg" />
+    <Content Include="Image\A0002.jpg" />
+    <Content Include="Image\A0003.jpg" />
+    <Content Include="Image\A0004.jpg" />
+    <Content Include="Image\ajax-loader.gif" />
+    <Content Include="Image\asc.png" />
+    <Content Include="Image\desc.png" />
+    <Content Include="Image\go.gif" />
+    <Content Include="Image\lens.gif" />
+    <Content Include="Image\Login.gif" />
+    <Content Include="Image\Logout.gif" />
+    <Content Include="Image\S0001.jpg" />
+    <Content Include="Image\S0002.jpg" />
+    <Content Include="Image\S0003.jpg" />
+    <Content Include="Image\T0001.jpg" />
+    <Content Include="Image\T0002.jpg" />
+    <Content Include="Chap05\AlbumDataSet.xsc">
+      <DependentUpon>AlbumDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Data\appSettings.config" />
+    <None Include="Chap05\AlbumDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlbumDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Chap05\AlbumDataSet.xss">
+      <DependentUpon>AlbumDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Chap10\MyApp.Master" />
+    <None Include="Properties\PublishProfiles\IIS1.pubxml" />
+    <None Include="Properties\PublishProfiles\SelfAspNet - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Site.css" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.sitemap" />
+    <Content Include="Web2.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\MyRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyRes.ja.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyRes.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Chap02\Hello2.aspx.cs">
+      <DependentUpon>Hello2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap02\Hello2.aspx.designer.cs">
+      <DependentUpon>Hello2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap02\ViewState.aspx.cs">
+      <DependentUpon>ViewState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap02\ViewState.aspx.designer.cs">
+      <DependentUpon>ViewState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap02\ViewState2.aspx.cs">
+      <DependentUpon>ViewState2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap02\ViewState2.aspx.designer.cs">
+      <DependentUpon>ViewState2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Button.aspx.cs">
+      <DependentUpon>Button.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Button.aspx.designer.cs">
+      <DependentUpon>Button.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\CheckBox.aspx.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\CheckBox.aspx.designer.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Custom.aspx.cs">
+      <DependentUpon>Custom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Custom.aspx.designer.cs">
+      <DependentUpon>Custom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Escape.aspx.cs">
+      <DependentUpon>Escape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Escape.aspx.designer.cs">
+      <DependentUpon>Escape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\FileUpload2.aspx.cs">
+      <DependentUpon>FileUpload2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\FileUpload2.aspx.designer.cs">
+      <DependentUpon>FileUpload2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\FileUploadMulti.aspx.cs">
+      <DependentUpon>FileUploadMulti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\FileUploadMulti.aspx.designer.cs">
+      <DependentUpon>FileUploadMulti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\HyperLink.aspx.cs">
+      <DependentUpon>HyperLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\HyperLink.aspx.designer.cs">
+      <DependentUpon>HyperLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\ImageTag.aspx.cs">
+      <DependentUpon>ImageTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\ImageTag.aspx.designer.cs">
+      <DependentUpon>ImageTag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\ListBox.aspx.cs">
+      <DependentUpon>ListBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\ListBox.aspx.designer.cs">
+      <DependentUpon>ListBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\RadioButton.aspx.cs">
+      <DependentUpon>RadioButton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\RadioButton.aspx.designer.cs">
+      <DependentUpon>RadioButton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Required.aspx.cs">
+      <DependentUpon>Required.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Required.aspx.designer.cs">
+      <DependentUpon>Required.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Text.aspx.cs">
+      <DependentUpon>Text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Text.aspx.designer.cs">
+      <DependentUpon>Text.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\Valid.aspx.cs">
+      <DependentUpon>Valid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\Valid.aspx.designer.cs">
+      <DependentUpon>Valid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\ValidBook.aspx.cs">
+      <DependentUpon>ValidBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\ValidBook.aspx.designer.cs">
+      <DependentUpon>ValidBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\ValidGroup.aspx.cs">
+      <DependentUpon>ValidGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\ValidGroup.aspx.designer.cs">
+      <DependentUpon>ValidGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03\ValidSummary.aspx.cs">
+      <DependentUpon>ValidSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03\ValidSummary.aspx.designer.cs">
+      <DependentUpon>ValidSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\DetailsView.aspx.cs">
+      <DependentUpon>DetailsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\DetailsView.aspx.designer.cs">
+      <DependentUpon>DetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\FormView.aspx.cs">
+      <DependentUpon>FormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\FormView.aspx.designer.cs">
+      <DependentUpon>FormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\FormViewAlbum.aspx.cs">
+      <DependentUpon>FormViewAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\FormViewAlbum.aspx.designer.cs">
+      <DependentUpon>FormViewAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\FormViewCustom.aspx.cs">
+      <DependentUpon>FormViewCustom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\FormViewCustom.aspx.designer.cs">
+      <DependentUpon>FormViewCustom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\GridView.aspx.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\GridView.aspx.designer.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\GridViewBook.aspx.cs">
+      <DependentUpon>GridViewBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\GridViewBook.aspx.designer.cs">
+      <DependentUpon>GridViewBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\GridViewCustom.aspx.cs">
+      <DependentUpon>GridViewCustom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\GridViewCustom.aspx.designer.cs">
+      <DependentUpon>GridViewCustom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\GridViewSort.aspx.cs">
+      <DependentUpon>GridViewSort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\GridViewSort.aspx.designer.cs">
+      <DependentUpon>GridViewSort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\GridViewTemplate.aspx.cs">
+      <DependentUpon>GridViewTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\GridViewTemplate.aspx.designer.cs">
+      <DependentUpon>GridViewTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\ListView.aspx.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\ListView.aspx.designer.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04\ListViewGroup.aspx.cs">
+      <DependentUpon>ListViewGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04\ListViewGroup.aspx.designer.cs">
+      <DependentUpon>ListViewGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\Album.cs" />
+    <Compile Include="Chap05\AlbumDataSet.cs">
+      <DependentUpon>AlbumDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\AlbumDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlbumDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\AlbumTableAdapter.cs" />
+    <Compile Include="Chap05\CrudMethod.aspx.cs">
+      <DependentUpon>CrudMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\CrudMethod.aspx.designer.cs">
+      <DependentUpon>CrudMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\ExecuteNonQuery.aspx.cs">
+      <DependentUpon>ExecuteNonQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\ExecuteNonQuery.aspx.designer.cs">
+      <DependentUpon>ExecuteNonQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\ExecuteReader.aspx.cs">
+      <DependentUpon>ExecuteReader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\ExecuteReader.aspx.designer.cs">
+      <DependentUpon>ExecuteReader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\ExecuteScalar.aspx.cs">
+      <DependentUpon>ExecuteScalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\ExecuteScalar.aspx.designer.cs">
+      <DependentUpon>ExecuteScalar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\Nest.aspx.cs">
+      <DependentUpon>Nest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\Nest.aspx.designer.cs">
+      <DependentUpon>Nest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\NonAccess.aspx.cs">
+      <DependentUpon>NonAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\NonAccess.aspx.designer.cs">
+      <DependentUpon>NonAccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\ObjectParam.aspx.cs">
+      <DependentUpon>ObjectParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\ObjectParam.aspx.designer.cs">
+      <DependentUpon>ObjectParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\ObjectParam2.aspx.cs">
+      <DependentUpon>ObjectParam2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\ObjectParam2.aspx.designer.cs">
+      <DependentUpon>ObjectParam2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\Paging.aspx.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\Paging.aspx.designer.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\PhotoUpload.aspx.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\PhotoUpload.aspx.designer.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\SqlOpti.aspx.cs">
+      <DependentUpon>SqlOpti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\SqlOpti.aspx.designer.cs">
+      <DependentUpon>SqlOpti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\SqlParam.aspx.cs">
+      <DependentUpon>SqlParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\SqlParam.aspx.designer.cs">
+      <DependentUpon>SqlParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\SqlStored.aspx.cs">
+      <DependentUpon>SqlStored.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\SqlStored.aspx.designer.cs">
+      <DependentUpon>SqlStored.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\SqlStored2.aspx.cs">
+      <DependentUpon>SqlStored2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\SqlStored2.aspx.designer.cs">
+      <DependentUpon>SqlStored2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\TableAdapter.aspx.cs">
+      <DependentUpon>TableAdapter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\TableAdapter.aspx.designer.cs">
+      <DependentUpon>TableAdapter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap05\Transaction.aspx.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap05\Transaction.aspx.designer.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\AppendHeader.aspx.cs">
+      <DependentUpon>AppendHeader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\AppendHeader.aspx.designer.cs">
+      <DependentUpon>AppendHeader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\ContentType.aspx.cs">
+      <DependentUpon>ContentType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\ContentType.aspx.designer.cs">
+      <DependentUpon>ContentType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\HelloForm.aspx.cs">
+      <DependentUpon>HelloForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\HelloForm.aspx.designer.cs">
+      <DependentUpon>HelloForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\HelloTrace.aspx.cs">
+      <DependentUpon>HelloTrace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\HelloTrace.aspx.designer.cs">
+      <DependentUpon>HelloTrace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\OutputStream.aspx.cs">
+      <DependentUpon>OutputStream.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\OutputStream.aspx.designer.cs">
+      <DependentUpon>OutputStream.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\QueryString.aspx.cs">
+      <DependentUpon>QueryString.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\QueryString.aspx.designer.cs">
+      <DependentUpon>QueryString.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\ReqUrl.aspx.cs">
+      <DependentUpon>ReqUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\ReqUrl.aspx.designer.cs">
+      <DependentUpon>ReqUrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\StatusCode.aspx.cs">
+      <DependentUpon>StatusCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\StatusCode.aspx.designer.cs">
+      <DependentUpon>StatusCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06\WriteFile.aspx.cs">
+      <DependentUpon>WriteFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap06\WriteFile.aspx.designer.cs">
+      <DependentUpon>WriteFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\App1.aspx.cs">
+      <DependentUpon>App1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\App1.aspx.designer.cs">
+      <DependentUpon>App1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\App2.aspx.cs">
+      <DependentUpon>App2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\App2.aspx.designer.cs">
+      <DependentUpon>App2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\Cookie.aspx.cs">
+      <DependentUpon>Cookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\Cookie.aspx.designer.cs">
+      <DependentUpon>Cookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\DataCache.aspx.cs">
+      <DependentUpon>DataCache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\DataCache.aspx.designer.cs">
+      <DependentUpon>DataCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\DataCache2.aspx.cs">
+      <DependentUpon>DataCache2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\DataCache2.aspx.designer.cs">
+      <DependentUpon>DataCache2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\HeaderCache.aspx.cs">
+      <DependentUpon>HeaderCache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\HeaderCache.aspx.designer.cs">
+      <DependentUpon>HeaderCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\Session1.aspx.cs">
+      <DependentUpon>Session1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\Session1.aspx.designer.cs">
+      <DependentUpon>Session1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\Session2.aspx.cs">
+      <DependentUpon>Session2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\Session2.aspx.designer.cs">
+      <DependentUpon>Session2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07\ViewStateGame.aspx.cs">
+      <DependentUpon>ViewStateGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap07\ViewStateGame.aspx.designer.cs">
+      <DependentUpon>ViewStateGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\CalendarBirth.aspx.cs">
+      <DependentUpon>CalendarBirth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\CalendarBirth.aspx.designer.cs">
+      <DependentUpon>CalendarBirth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\CalendarSche.aspx.cs">
+      <DependentUpon>CalendarSche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\CalendarSche.aspx.designer.cs">
+      <DependentUpon>CalendarSche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\CalendarSche2.aspx.cs">
+      <DependentUpon>CalendarSche2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\CalendarSche2.aspx.designer.cs">
+      <DependentUpon>CalendarSche2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Chart.aspx.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Chart.aspx.designer.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Chart2.aspx.cs">
+      <DependentUpon>Chart2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Chart2.aspx.designer.cs">
+      <DependentUpon>Chart2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Db.aspx.cs">
+      <DependentUpon>Db.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Db.aspx.designer.cs">
+      <DependentUpon>Db.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Limit.aspx.cs">
+      <DependentUpon>Limit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Limit.aspx.designer.cs">
+      <DependentUpon>Limit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\MultiView.aspx.cs">
+      <DependentUpon>MultiView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\MultiView.aspx.designer.cs">
+      <DependentUpon>MultiView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\MultiViewBook.aspx.cs">
+      <DependentUpon>MultiViewBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\MultiViewBook.aspx.designer.cs">
+      <DependentUpon>MultiViewBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Sql.aspx.cs">
+      <DependentUpon>Sql.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Sql.aspx.designer.cs">
+      <DependentUpon>Sql.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\SqlSiteMapProvider.cs" />
+    <Compile Include="Chap09\TreeView.aspx.cs">
+      <DependentUpon>TreeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\TreeView.aspx.designer.cs">
+      <DependentUpon>TreeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\Wizard.aspx.cs">
+      <DependentUpon>Wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\Wizard.aspx.designer.cs">
+      <DependentUpon>Wizard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09\WizardTemplate.aspx.cs">
+      <DependentUpon>WizardTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap09\WizardTemplate.aspx.designer.cs">
+      <DependentUpon>WizardTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\AppSettings.aspx.cs">
+      <DependentUpon>AppSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\AppSettings.aspx.designer.cs">
+      <DependentUpon>AppSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\ChartParts.ascx.cs">
+      <DependentUpon>ChartParts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\ChartParts.ascx.designer.cs">
+      <DependentUpon>ChartParts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\Content.aspx.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\Content.aspx.designer.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\Content2.aspx.cs">
+      <DependentUpon>Content2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\Content2.aspx.designer.cs">
+      <DependentUpon>Content2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\Diary.aspx.cs">
+      <DependentUpon>Diary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\Diary.aspx.designer.cs">
+      <DependentUpon>Diary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\ErrorLogHandler.cs" />
+    <Compile Include="Chap10\GridFriendly.aspx.cs">
+      <DependentUpon>GridFriendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\GridFriendly.aspx.designer.cs">
+      <DependentUpon>GridFriendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\LoggingModule.cs" />
+    <Compile Include="Chap10\MyApp.Master.cs">
+      <DependentUpon>MyApp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\MyApp.Master.designer.cs">
+      <DependentUpon>MyApp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\RouteUrl.aspx.cs">
+      <DependentUpon>RouteUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\RouteUrl.aspx.designer.cs">
+      <DependentUpon>RouteUrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\Schedule.ascx.cs">
+      <DependentUpon>Schedule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\Schedule.ascx.designer.cs">
+      <DependentUpon>Schedule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\SourceOutputHandler.cs" />
+    <Compile Include="Chap10\UserChart.aspx.cs">
+      <DependentUpon>UserChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\UserChart.aspx.designer.cs">
+      <DependentUpon>UserChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\UserSchedule.aspx.cs">
+      <DependentUpon>UserSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\UserSchedule.aspx.designer.cs">
+      <DependentUpon>UserSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap10\ValidateMessagePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\ValidPage.aspx.cs">
+      <DependentUpon>ValidPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap10\ValidPage.aspx.designer.cs">
+      <DependentUpon>ValidPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Basic.aspx.cs">
+      <DependentUpon>Basic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Basic.aspx.designer.cs">
+      <DependentUpon>Basic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Chain.aspx.cs">
+      <DependentUpon>Chain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Chain.aspx.designer.cs">
+      <DependentUpon>Chain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Chain2.aspx.cs">
+      <DependentUpon>Chain2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Chain2.aspx.designer.cs">
+      <DependentUpon>Chain2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Event.aspx.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Event.aspx.designer.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Timer.aspx.cs">
+      <DependentUpon>Timer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Timer.aspx.designer.cs">
+      <DependentUpon>Timer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\Timer2.aspx.cs">
+      <DependentUpon>Timer2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\Timer2.aspx.designer.cs">
+      <DependentUpon>Timer2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\UpdatePanel.aspx.cs">
+      <DependentUpon>UpdatePanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\UpdatePanel.aspx.designer.cs">
+      <DependentUpon>UpdatePanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11\UpdateProgress.aspx.cs">
+      <DependentUpon>UpdateProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap11\UpdateProgress.aspx.designer.cs">
+      <DependentUpon>UpdateProgress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Chap02\Hello.aspx.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap02\Hello.aspx.designer.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\SelfAsp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\doc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MyRes.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyRes.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MyRes.ja.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyRes.ja.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50197</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+﻿Public Class DataCache
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim ds As New DataSet()
+        If IsDBNull(Cache.Get("Books")) Or IsNothing(Cache.Get("Books")) Then
+            ds.ReadXml(Server.MapPath("~/App_Data/Books.xml"))
+            Cache.Insert("Books", ds)
+        Else
+            ds = Cache.Get("Books")
+        End If
+        grid.DataSource = ds
+        Page.DataBind()
+    End Sub
+
+End Class

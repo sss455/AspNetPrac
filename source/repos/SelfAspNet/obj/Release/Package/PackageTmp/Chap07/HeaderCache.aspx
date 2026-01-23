@@ -1,0 +1,20 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HeaderCache.aspx.cs" Inherits="SelfAspNet.Chap07.HeaderCache" Culture="auto" UICulture="auto" %>
+<%@ OutputCache VaryByParam="none" VaryByHeader="Accept-Language" Duration="120" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="lblMessage" runat="server" Text="<%$ Resources:MyRes, Greeting %>"></asp:Label><br />
+            <asp:Label ID="lblTimeTitle" runat="server" Text="<%$ Resources:MyRes, Update %>"></asp:Label>：
+            <asp:Label ID="lblCurrent" runat="server" Text=""></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <isbn>978-4-8222-8651-4</isbn>
+    <title>Visual C++ 2019超入門</title>
+    <price>2000</price>
+    <publish>日経BP</publish>
+    <published>2019/10/03</published>
+  </Table>
+  <Table>
+    <isbn>978-4-8222-5399-8</isbn>
+    <title>Visual C# 2019超入門</title>
+    <price>2000</price>
+    <publish>日経BP</publish>
+    <published>2019/08/22</published>
+  </Table>
+  <Table>
+    <isbn>978-4-8156-0182-9</isbn>
+    <title>これからはじめるVue.js実践入門</title>
+    <price>3380</price>
+    <publish>SBクリエイティブ</publish>
+    <published>2019/08/22</published>
+  </Table>
+  <Table>
+    <isbn>978-4-7980-5759-0</isbn>
+    <title>はじめてのAndroidアプリ開発</title>
+    <price>3200</price>
+    <publish>秀和システム</publish>
+    <published>2019/08/10</published>
+  </Table>
+  <Table>
+    <isbn>978-4-7981-6044-3</isbn>
+    <title>Androidアプリ開発の教科書</title>
+    <price>2850</price>
+    <publish>翔泳社</publish>
+    <published>2019/07/10</published>
+  </Table>
+  <Table>
+    <isbn>978-4-7981-5112-0</isbn>
+    <title>独習Java 新版</title>
+    <price>2980</price>
+    <publish>翔泳社</publish>
+    <published>2019/05/15</published>
+  </Table>
+  <Table>
+    <isbn>978-4-7981-5757-3</isbn>
+    <title>JavaScript逆引きレシピ</title>
+    <price>2800</price>
+    <publish>翔泳社</publish>
+    <published>2018/10/15</published>
+  </Table>
+</NewDataSet>

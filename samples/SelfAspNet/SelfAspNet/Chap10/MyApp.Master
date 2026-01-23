@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyApp.master.cs" Inherits="SelfAspNet.Chap10.MyApp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Image ID="img" runat="server"
+                ImageUrl="https://wings.msn.to/image/wings.jpg" /><hr />
+            <asp:ContentPlaceHolder ID="cph" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            Copyright(c) 1998-2019,Yamada Yoshihiro. All Right Reserved.<br />
+            <asp:SqlDataSource ID="sds" runat="server"
+                ConnectionString="<%$ ConnectionStrings:SelfAsp %>" DataSourceMode="DataReader"
+                ProviderName="<%$ ConnectionStrings:SelfAsp.ProviderName %>"
+                SelectCommand="SELECT title, keywd, description FROM Sitemap WHERE (url = @url)">
+                <SelectParameters>
+                    <asp:Parameter Name="url" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
+    </form>
+</body>
+</html>

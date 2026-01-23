@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Rdb.aspx" title="データベース連携"
+               description="データベース連携について">
+    <siteMapNode url="~/Chap09/Db.aspx" title="データベース"
+                 description="データベースについて">
+      <siteMapNode url="~/Chap09/Type.aspx" title="データ型"
+                   description="データ型について" />
+      <siteMapNode url="~/Chap09/Limit.aspx" title="制約"
+                   description="制約について" />
+      <siteMapNode url="~/Chap09/Sql.aspx" title="SQL"
+                   description="SQLについて">
+        <siteMapNode url="~/Chap09/Dml.aspx" title="DML"
+                     description="データ操作言語について" />
+        <siteMapNode url="~/Chap09/Ddl.aspx" title="DDL"
+                     description="データ定義言語について" />
+        <siteMapNode url="~/Chap09/Dcl.aspx" title="DCL"
+                     description="データ制御言語について" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="DataSource.aspx" title="データソースコントロール"
+                 description="データソースコントロールについて">
+      <siteMapNode url="~/Chap10/Content.aspx" title="SqlDataSource"
+                   description="SqlDataSourceについて" />
+      <siteMapNode url="SiteMapDataSource.aspx" title="SiteMapDataSource"
+                   description="SiteMapDataSourceについて" />
+      <siteMapNode url="ObjectDataSource.aspx" title="ObjectDataSource"
+                   description="ObjectDataSourceについて" />
+    </siteMapNode>
+    <siteMapNode url="DataAccessCtrl.aspx" title="データバインドコントロール"
+                 description="データバインドコントロールについて">
+      <siteMapNode url="~/Chap08/Auth/GridView.aspx" title="GridView"
+                   description="GridViewについて" />
+      <siteMapNode url="~/Chap08/Auth/DetailsView.aspx" title="DetailsView"
+                   description="DetailsViewについて" />
+      <siteMapNode url="~/Chap08/Auth/FormView.aspx" title="FormView"
+                   description="FormViewについて" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
