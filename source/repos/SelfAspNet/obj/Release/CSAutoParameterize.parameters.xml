@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="SelfAsp-Web.config Connection String" description="SelfAsp データベースに接続するためにアプリケーションによって web.config で使用される接続文字列。" defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SelfAsp.mdf;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\010159_numoto\\AspNetPrac\\source\\repos\\SelfAspNet\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SelfAsp']/@connectionString" />
-  </parameter>
-  <parameter name="SelfAspEntities-Web.config Connection String" description="SelfAspEntities データベースに接続するためにアプリケーションによって web.config で使用される接続文字列。" defaultValue="data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SelfAsp.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\010159_numoto\\AspNetPrac\\source\\repos\\SelfAspNet\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SelfAspEntities']/@connectionString" />
-  </parameter>
-</parameters>
